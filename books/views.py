@@ -14,7 +14,7 @@ class TitleRetrieveAPIView(RetrieveAPIView):
     serializer_class = TitleSerializer
 
     def get_object(self):
-        return Title.objects.get(pk=self.request.kwargs['title_id'])
+        return Title.objects.get(pk=self.kwargs['title_id'])
 
 
 class VolumeRetrieveAPIView(ListAPIView):
