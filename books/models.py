@@ -59,3 +59,8 @@ class Chapter(models.Model):
         constraints = [
             models.UniqueConstraint(fields=['volume', 'chapter_number'], name='unique chapter_number')
         ]
+
+
+class Tag(models.Model):
+    name = models.CharField(max_length=100)
+    titles = models.ManyToManyField(Title, 'tags')
